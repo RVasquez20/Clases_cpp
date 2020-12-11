@@ -13,6 +13,8 @@
 using namespace std;
 //For , while, do while, loop-> anidados => Vectores: unidimensionales,bidimensionales,tridimencionales,4 dimensiones, linkend list, Punteros
 int main() {
+    //Probando git
+
     // inicia,Termina,Paso,(Van con la misma varible),Iterador
     //Ejercicio 1 ciclo for; Ingresa la cantidad de notas a promediar y muestra el promedio calculado
   /*  int nota=0,suma=0,cantidad=0;
