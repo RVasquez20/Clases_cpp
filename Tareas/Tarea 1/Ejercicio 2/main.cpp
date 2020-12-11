@@ -25,25 +25,28 @@ int main() {
     float Promedio = 0.0;
 
     cout << "Ingrese el nombre completo de alumno: ";
-    getline(cin, NombreCompleto);
+    getline(cin, NombreCompleto);cout<<endl;
     cout << "Ingrese la materia: ";
-    getline(cin, Materia);
+    getline(cin, Materia);cout<<endl;
     cout << "Ingrese el grado: ";
-    getline(cin, Grado);
+    getline(cin, Grado);cout<<endl;
     cout << "Ingrese la nota 1: ";
-    cin >> Nota1;
+    cin >> Nota1;cout<<endl;
     cout << "Ingrese la nota 2: ";
     cin >> Nota2;
-    cout<<endl;
+cout<<endl;
     cout << "Ingrese la nota 3: ";
-    cin >> Nota3;
+    cin >> Nota3;cout<<endl;
     cout << "Ingrese la nota 4: ";
-    cin >> Nota4;
+    cin >> Nota4;cout<<endl;
     cout << "Ingrese la nota 5: ";
-    cin >> Nota5;
+    cin >> Nota5;cout<<endl;
     Promedio = (Nota1 + Nota2 + Nota3 + Nota4 + Nota5) / 5;
 
     if ((Nota1 > 0) && (Nota2 > 0) && (Nota3 > 0) && (Nota4 > 0) && (Nota5 > 0)){
+        if((Nota1 >100) || (Nota2 > 100) || (Nota3 > 100) || (Nota4 > 100) || (Nota5 > 100)){
+            cout<<"Datos mal ingresados"<<endl;
+        }else{
             if (Promedio >= 61){
                 cout << "\nEl nombre del alumno es: " << NombreCompleto << endl;
                 cout << "La materia es: " << Materia << endl;
@@ -66,7 +69,8 @@ int main() {
                 cout << "La nota 5 es: " << Nota5 << endl;
                 cout << "El promedio de las 5 notas es: " << Promedio << endl;
                 cout << "El estudiante reprobo el curso con " << " " << Promedio << " " << "Puntos." << endl;
-            }
+            }}
+
     }else{
         cout << "\nCorrobore que todas la notas sean mayores a 0" << endl;
     }

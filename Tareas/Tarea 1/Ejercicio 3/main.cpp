@@ -15,14 +15,9 @@ using namespace std;
 int main() {
 
 int Numero = 0;
-
+5=cinco
+        5.5=cinco punto cinco
 cout << "Ingrese un numero: ";
 cin >> Numero;
-//mal
-if ((Numero % 1) != 0){
-    cout << "El numero no es entero";
-}
-if ((Numero % 1) == 0){
-        cout << "El numero es entero";
-    }
+cout<<"todos los numeros ingresados seran enteros ya que aproxima";
 }
