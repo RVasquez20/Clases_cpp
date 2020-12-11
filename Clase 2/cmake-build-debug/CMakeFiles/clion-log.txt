@@ -1,4 +1,4 @@
-"C:\Program Files\JetBrains\CLion 2020.1.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "C:\Users\rodri\Documents\GitHub\Clases_cpp\Clase 2"
+"D:\Program Files\JetBrains\CLion 2020.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "C:\Users\jair_\Documents\GitHub\Clases_cpp\Clase 2"
 -- The C compiler identification is GNU 6.3.0
 -- The CXX compiler identification is GNU 6.3.0
 -- Check for working C compiler: C:/MinGW/bin/gcc.exe
@@ -15,4 +15,4 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/rodri/Documents/GitHub/Clases_cpp/Clase 2/cmake-build-debug
+-- Build files have been written to: C:/Users/jair_/Documents/GitHub/Clases_cpp/Clase 2/cmake-build-debug
