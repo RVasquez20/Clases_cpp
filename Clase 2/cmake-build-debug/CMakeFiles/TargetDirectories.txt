@@ -1,0 +1,3 @@
+C:/Users/rodri/Documents/GitHub/Clases_cpp/Clase 2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/rodri/Documents/GitHub/Clases_cpp/Clase 2/cmake-build-debug/CMakeFiles/Clase_2.dir
+C:/Users/rodri/Documents/GitHub/Clases_cpp/Clase 2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
