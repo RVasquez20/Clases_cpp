@@ -89,5 +89,6 @@ while(i<cantidad) {
 }
     promedio=suma/cantidad;
     cout<<"El promedio del estudiante es: "<<promedio<<endl;
+getch();
     return 0;
 }
