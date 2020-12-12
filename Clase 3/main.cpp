@@ -16,7 +16,8 @@ cout<<"1) sumar"<<endl;
 cout<<"2) Restar"<<endl;
 cout<<"3) Multiplicar"<<endl;
 cout<<"4) Dividir"<<endl;
-cout<<"5) Salir"<<endl;
+cout<<"5) Modulo"<<endl;
+cout<<"6) Salir"<<endl;
 cout<<"Ingrese la opcion que desea: ";
 cin>>opc;
 
@@ -29,10 +30,39 @@ cin>>opc;
             cout<<"La suma es "<<n1+n2<<endl;
             break;
         }
-
-        
-
+        case 2:{
+            cout<<"Ingrese el primer numero a restar"<<endl;
+            cin>>n1;
+            cout<<"Ingrese el segundo numero a restar"<<endl;
+            cin>>n2;
+            cout<<"La resta es "<<n1-n2<<endl;
+            break;
+        }
+        case 3:{
+            cout<<"Ingrese el primero numero a multiplicar"<<endl;
+            cin>>n1;
+            cout<<"Ingrese el segundo numero a multiplicar"<<endl;
+            cin>>n2;
+            cout<<"La multiplicacion es"<<n1*n2<<endl;
+            break;
+        }
+        case 4:{
+            cout<<"Ingrese el primer numero a dividir"<<endl;
+            cin>>n1;
+            cout<<"Ingrese el segundo numero a dividir"<<endl;
+            cin>>n2;
+            cout<<"La division es"<<n1/n2<<endl;
+            break;
+        }
         case 5:{
+            cout<<"Ingrese el primer numero a dividir"<<endl;
+            cin>>n1;
+            cout<<"Ingrese el segundo numero a dividir"<<endl;
+            cin>>n2;
+            cout<<"El modulo es"<<n1%n2<<endl;
+            break;
+        }
+        case 6:{
             cout<<"Gracias por utilizar el programa"<<endl;
             getch();
             exit(0);
@@ -44,7 +74,6 @@ cin>>opc;
             goto loop;
             break;
         }
-
     }
     fflush(stdin);
     cout<<"Desea Regresar al menu principal? Si=s/No=n"<<endl;
