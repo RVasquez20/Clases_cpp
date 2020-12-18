@@ -21,7 +21,12 @@ cout<<"6) suma del 1-1000"<<endl;
 cout<<"7) Numeros pares del 1-360"<<endl;
 cout<<"8) Promedio de n notas"<<endl;
 cout<<"9) Numeros impares del 1-360"<<endl;
-cout<<"10) Salir"<<endl;
+cout<<"10) Validar si el numero es positivo o negativo"<<endl;
+cout<<"11) Mostrar 10 veces la serie de nuemeros del 1 al 10"<<endl;
+cout<<"12) Ingresar dos numeros e indicar cual es mayor"<<endl;
+cout<<"13) Encontrar la hipotenusa de un triangulo rectangulo sabiendo sus dos catetos"<<endl;
+cout<<"14) Al ingresar un saldo, me indique cuales son los pagos mensuales"<<endl;
+cout<<"15) Salir"<<endl;
 cout<<"Ingrese la opcion que desea: ";
 cin>>opc;
 
@@ -87,6 +92,42 @@ cin>>opc;
                     cout<<i<<endl;
                 }
             }
+            break;
+        }
+        case 10:{
+            int Numero = 0;
+            cout << "Digite un numero: ";
+            cin >> Numero;
+            if(Numero >=0){
+                cout <<"El numero es positivo"<<endl;
+            }else{
+                cout <<"El numero es negativo"<<endl;
+            }
+            break;
+        }
+        case 11:{
+            for(int i=1; i<=10; i++){
+                for(int j=1; j<=10; j++){
+                    cout << j;
+                }
+                cout << endl;
+            }
+            break;
+        }
+        case 12:{
+            int Numero1 = 0, Numero2 = 0;
+            cout<<"Ingrese el primero numero: ";
+            cin>>Numero1;
+            cout<<"Ingrese el segundo numero: ";
+            cin>>Numero2;
+            if(Numero1 > Numero2){
+                cout<<Numero1<<" Es el mayor"<<endl;
+            }else
+                if(Numero2 > Numero1){
+                cout<<Numero2<<" Es el mayor"<<endl;
+            }else{
+                    cout<<"Los dos numero son iguales"<<endl;
+                }
             break;
         }
         default:{
