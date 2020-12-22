@@ -76,5 +76,28 @@ int main() {
    /* for(string i:Nombres){
         cout<<i<<endl;
     }*/
+    int Numero = 0, Contador = 0, Contador1 = 0;
+
+    cout << "Ingrese un numero: ";
+    cin >> Numero;
+
+    for(int i=0; i<Numero; i++){
+        cout << i << endl;
+        if(i%2==0){
+            Contador++;
+        }
+    }
+    int ContarNumero[Contador];
+    for(int i=0; i<Numero; i++){
+        if(i%2==0){
+            ContarNumero[Contador1]=i;
+            Contador1++;
+        }
+    }
+    cout<<"Los pares son: "<<endl;
+    for(int i=0; i<Contador; i++){
+        cout << ContarNumero[i] << endl;
+    }
+
     return 0;
 }
