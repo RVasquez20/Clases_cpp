@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <conio.h>
 //Arreglos Bidimensionales
-
+//Cadenas,Metodos de ordenamiendotos de arrays(Burbuja, Recursivo, Arbol),Busquedas,Estructuras,Funciones,Recursividad.
 using  namespace std;
 int main() {
 /*Ejemplo 1:Matriz que contiene 1,2,3,4,5,6,7,8,9 de 3x3
