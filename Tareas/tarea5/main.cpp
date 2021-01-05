@@ -726,7 +726,7 @@ for(int i=0;i<Filas;i++){
                 }
                 break;
             }
-            case 21:{
+            case 41:{
             int Numero=0,ContadorDeDivisores=0;
             cout<<"Ingrese el numero a determinar si es primo"<<endl;
             cin>>Numero;
@@ -742,7 +742,42 @@ for(int i=0;i<Filas;i++){
             }
                 break;
             }
+            case 21:{
+                // Registrar 20 números en un arreglo de una dimensión y muestre posteriormente los
+                //elementos que contienen números múltiplos de 5 y en forma inversa
+
+                int Array21[20], Numero = 1;
+
+                for(int i=0; i<20; i++){
+                    Array21[i] = Numero;
+                            Numero++;
+                }
+                for(int i=20; i>=0; i--){
+                    if(Array21[i]%5 == 0){
+                        cout << Array21[i] << endl;
+                    }
+                }
+                break;
+            }
             case 22:{
+                // Registrar 20 notas de alumnos, calicadas de 0 a 20, teniendo en cuenta que se mostraran
+                //solo los aprobados, si no saldrá una frase "desaprobado"
+
+                int Array22[20];
+
+                for(int i=0; i<20; i++){
+                    cout << "Ingrese la nota " << i+1 << ":";
+                    cin >> Array22[i];
+                }
+                for(int i=0; i<20; i++){
+                    if(Array22[i] >10){
+                        cout << "Aprobado" << endl;
+                    }else{
+                        cout << "Reprobado" << endl;
+                    }
+                }
+
+
 
                 break;
             }
