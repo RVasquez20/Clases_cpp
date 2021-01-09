@@ -6,25 +6,28 @@
 #include <string.h>
 #include <strings.h>
 using namespace std;
-/* struct Empleado{
+ struct Empleado{
     char Nombre[50],Apellido[50];
     int Edad;
 };
  Empleado EmpleadoDatos;
-*/
+
 /*struct Estudiante{
     int Notas[100];
     double Promedio;
     char Nombre[50];
 };
-Estudiante EstudianteDatos[100];*/
+Estudiante EstudianteDatos[100];
 struct Estudiante{
     int Notas[100];
     double Promedio;
     char Nombre[50];
 };
-Estudiante EstudianteDatos[100][100];
+Estudiante EstudianteDatos[100][100];*/
+void Menu();
+void Mostrar();
 int main() {
+    Menu();
     /*int opcMenu=0;
     do {
         loop:
@@ -161,7 +164,7 @@ int main() {
         cout<<"-------------------------------"<<endl;
         cout<<"El Promedio Es: "<<EstudianteDatos[i].Promedio<<endl;
     }*/
-    int Filas=0,CantidadNotas[100],Suma,Columnas=0;
+   /* int Filas=0,CantidadNotas[100],Suma,Columnas=0;
     cout<<"Ingrese la cantidad de Filas Estudiantes a Registrar"<<endl;
     cin>>Filas;
     cout<<"Ingrese la cantidad de Columnas Estudiantes a Registrar"<<endl;
@@ -199,13 +202,124 @@ int main() {
                  cout << "-------------------------------" << endl;
                  cout << "El Promedio Es: " << EstudianteDatos[i][x].Promedio << endl;
              }
-         }*/
+         }
             S+=EstudianteDatos[i][x].Promedio;
         }
         SumaFilas[i]=S;
     }
     for(int i:SumaFilas){
         cout<<i<<endl;
-    }
+    }*/
     return 0;
+}
+void Menu(){
+    int opcMenu=0;
+
+        loop:
+        int opc = 0;
+        cout << "Menu Principal" << endl;
+        cout << "1)Ingreso de datos" << endl;
+        cout << "2)Mostrar Datos" << endl;
+        cout << "3)Actualizar un dato en especifico" << endl;
+        cout << "4)Borrar Datos" << endl;
+        cout << endl << "Ingrese la opcion que desea :";
+        cin >> opc;
+        cout << endl;
+        fflush(stdin);
+        switch (opc) {
+            case 1: {
+                cout << "Ingrese el nombre" << endl;
+                cin.getline(EmpleadoDatos.Nombre, 50, '\n');
+                cout << "Ingrese el Apellido" << endl;
+                cin.getline(EmpleadoDatos.Apellido, 50, '\n');
+                cout << "Ingrese La Edad" << endl;
+                cin >> EmpleadoDatos.Edad;
+                fflush(stdin);
+                Mostrar();
+                Menu();
+                break;
+            }
+            case 2: {
+                Mostrar();
+               Menu();
+                break;
+            }
+            case 3:{
+                loopMod:
+                int opcMod=0, edad = 0;
+                char eleccion,Dato[50];
+                cout<<"Menu Modificacion"<<endl;
+                cout<<"1)Nombre"<<endl;
+                cout<<"2)Apellido"<<endl;
+                cout<<"3)Edad"<<endl;
+                cout<<endl<<"Seleccione la opcion a Modificar";
+                cin>>opcMod;
+                fflush(stdin);
+                switch (opcMod) {
+                    case 1:{
+                        cout<<"Ingrese Nuevo Nombre"<<endl;
+                        cin.getline(Dato,50,'\n');
+                        cout<<"¿Esta seguro que desea cambiar de '"<<EmpleadoDatos.Nombre<<"' a '"<<Dato<<"'? S/N"<<endl;
+                        cin>>eleccion;
+                        if(eleccion=='S'){
+                            strcpy(EmpleadoDatos.Nombre,Dato);
+                        }Menu();
+                        break;
+                    }
+
+                    case 2:{
+                        cout << "Ingrese Nuevo Apellido" << endl;
+                        cin.getline(Dato,50,'\n');
+                        cout << "Esta seguro que desea cambiar de '" << EmpleadoDatos.Apellido << "' a '" << Dato << "'? S/N"<< endl;
+                        cin >> eleccion;
+                        if(eleccion == 'S'){
+                            strcpy(EmpleadoDatos.Apellido,Dato);
+                        }Menu();
+                        break;
+                    }
+                    case 3:{
+                        cout << "Ingrese Nueva Edad" << endl;
+                        cin >> edad;
+                        cout << "Esta seguro que desea cambiar de " << EmpleadoDatos.Edad << " a " << edad << "? S/N" << endl;
+                        cin >> eleccion;
+                        fflush(stdin);
+                        if(eleccion == 'S'){
+                            EmpleadoDatos.Edad = edad;
+                        }Menu();
+                        break;
+                    }
+                    default:{
+                        cout<<"Opcion Incorrecta Vuelva a elegir"<<endl;
+                        getch();
+                        goto loopMod;
+                        break;
+                    }
+                }Menu();
+                break;
+            }
+            case 4:{
+                char eleccion;
+                cout<<"Esta seguro que desea eliminar todos los datos(devolviendo los valores Predeterminados)? S/N"<<endl;
+                cin>>eleccion;
+                if(eleccion=='S'){
+                    strcpy(EmpleadoDatos.Nombre,"");
+                    strcpy(EmpleadoDatos.Apellido,"");
+                    EmpleadoDatos.Edad=0;
+                }
+                Menu();
+                break;
+            }
+            default: {
+                cout << "Opcion incorrecta Escoja nuevamente";
+                getch();
+                goto loop;
+                break;
+            }
+        }
+
+}
+void Mostrar(){
+    cout << "El nombre Es:" << EmpleadoDatos.Nombre << endl;
+    cout << "El Apellido Es:" << EmpleadoDatos.Apellido << endl;
+    cout << "La Edad Es:" << EmpleadoDatos.Edad << endl;
 }

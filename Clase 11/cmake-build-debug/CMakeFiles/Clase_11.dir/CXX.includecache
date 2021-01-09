@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/rodri/Documents/GitHub/Clases_cpp/Clase 11/main.cpp
+iostream
+-
+stdlib.h
+-
+stdio.h
+-
+string
+-
+string.h
+-
+conio.h
+-
+
