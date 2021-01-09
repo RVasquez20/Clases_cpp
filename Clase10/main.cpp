@@ -5,6 +5,9 @@
 #include <string>
 #include <string.h>
 #include <strings.h>
+#define usuario "jairo"
+#define pass "123"
+#define linea cout<<"---------------------"<<endl;
 using namespace std;
  struct Empleado{
     char Nombre[50],Apellido[50];
@@ -27,6 +30,10 @@ Estudiante EstudianteDatos[100][100];*/
 void Menu();
 void Mostrar();
 int main() {
+   if(usuario=="jairo"){
+       cout<<"Hola "<<usuario<<endl;
+       linea;
+   }
     Menu();
     /*int opcMenu=0;
     do {
