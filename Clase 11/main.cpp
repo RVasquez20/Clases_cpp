@@ -9,6 +9,9 @@ using namespace std;
 //Prototipos
 void Menu();
 int Suma();
+void s(int ,int);
+void r(int ,int);
+void m(int ,int);
 void Resta(int,int);
 int Multiplicacion(int,int);
 double Division(double,double);
@@ -21,84 +24,94 @@ bool Negacion(bool);
 }
 
 void Menu(){
-    int opc=0;
-    cout << "Menu Principal" << endl;
-    cout << "1)Sumar" << endl;
-    cout << "2)Restar" << endl;
-    cout << "3)Multiplicar" << endl;
-    cout << "4)Dividir" << endl;
-    cout << "5)Convertidor a Mayuscula" << endl;
-    cout << "6)Encontrar un numero en un array" << endl;
-    cout << "7)Negacion" << endl;
-    cout << "8)Salir" << endl;
-    cin >> opc;
-    fflush(stdin);
-    switch (opc) {
-        case 1:{
-            cout<<"La suma de los numeros es: "<<Suma()<<endl;
-            Menu();
-            break;
-        }
-        case 2:{
-            //Resta();
-            Resta(10,5);
-            Menu();
-            break;
-        }
-        case 3:{
-            int Numero1=0,Numero2=0;
-            cout<<"Ingrese el primer numero a multiplicar"<<endl;
-            cin>>Numero1;
-            cout<<"Ingrese el segundo numero a multiplicar"<<endl;
-            cin>>Numero2;
-            cout<<Multiplicacion(Numero1,Numero2)<<endl;
-            cout<<Multiplicacion(5,2)<<endl;
-            Menu();
-            break;
-        }
-        case 4:{
-            double Numero1=0.0,Numero2=0.0;
-            cout<<"Ingrese el primer numero a dividir"<<endl;
-            cin>>Numero1;
-            cout<<"Ingrese el segundo numero a dividir"<<endl;
-            cin>>Numero2;
-            cout<<Division(Numero1,Numero2)<<endl;
-            Menu();
-            break;
-        }
-        case 5:{
-            string x;
-            cout<<"Digite la cadena a convertir a mayuscula"<<endl;
-            getline(cin,x);
-            cout<<Mayusculas(x)<<endl;
-            Menu();
-            break;
-        }
-        case 6:{
-           if(Encontrado()){
-               cout<<"Encontrado"<<endl;
-           }else{
-               cout<<"No Encontrado"<<endl;
-           }
+     int n1=0,n2=0,n3=0;
+     cout<<"Ingrese el primer numero a operar"<<endl;
+     cin>>n1;
+    cout<<"Ingrese el segundo numero a operar"<<endl;
+    cin>>n2;
+    cout<<"Ingrese el tercer numero a operar"<<endl;
+    cin>>n3;
+    s(n1,n3);
+    r(n1,n2);
+    m(n1,n1);
+    /* int opc=0;
+     cout << "Menu Principal" << endl;
+     cout << "1)Sumar" << endl;
+     cout << "2)Restar" << endl;
+     cout << "3)Multiplicar" << endl;
+     cout << "4)Dividir" << endl;
+     cout << "5)Convertidor a Mayuscula" << endl;
+     cout << "6)Encontrar un numero en un array" << endl;
+     cout << "7)Negacion" << endl;
+     cout << "8)Salir" << endl;
+     cin >> opc;
+     fflush(stdin);
+     switch (opc) {
+         case 1:{
+             cout<<"La suma de los numeros es: "<<Suma()<<endl;
+             Menu();
+             break;
+         }
+         case 2:{
+             //Resta();
+             Resta(10,5);
+             Menu();
+             break;
+         }
+         case 3:{
+             int Numero1=0,Numero2=0;
+             cout<<"Ingrese el primer numero a multiplicar"<<endl;
+             cin>>Numero1;
+             cout<<"Ingrese el segundo numero a multiplicar"<<endl;
+             cin>>Numero2;
+             cout<<Multiplicacion(Numero1,Numero2)<<endl;
+             cout<<Multiplicacion(5,2)<<endl;
+             Menu();
+             break;
+         }
+         case 4:{
+             double Numero1=0.0,Numero2=0.0;
+             cout<<"Ingrese el primer numero a dividir"<<endl;
+             cin>>Numero1;
+             cout<<"Ingrese el segundo numero a dividir"<<endl;
+             cin>>Numero2;
+             cout<<Division(Numero1,Numero2)<<endl;
+             Menu();
+             break;
+         }
+         case 5:{
+             string x;
+             cout<<"Digite la cadena a convertir a mayuscula"<<endl;
+             getline(cin,x);
+             cout<<Mayusculas(x)<<endl;
+             Menu();
+             break;
+         }
+         case 6:{
+            if(Encontrado()){
+                cout<<"Encontrado"<<endl;
+            }else{
+                cout<<"No Encontrado"<<endl;
+            }
 
-            Menu();
-            break;
-        }
-        case 7:{
-            cout<<Negacion(false)<<endl;
-            Menu();
-            break;
-        }
-        case 8:{
-            exit(0);
-            break;
-        }
-        default: {
-            cout << "opcion incorrecta" << endl;
-            break;
-        }
-    }
-
+             Menu();
+             break;
+         }
+         case 7:{
+             cout<<Negacion(false)<<endl;
+             Menu();
+             break;
+         }
+         case 8:{
+             exit(0);
+             break;
+         }
+         default: {
+             cout << "opcion incorrecta" << endl;
+             break;
+         }
+     }
+ */
 }
 int Suma(){
     int n1=0,n2=0,S=0;
@@ -147,4 +160,13 @@ bool Encontrado(){
 }
 bool Negacion(bool x){
     return !x;
+}
+void s(int numero1,int numero2){
+    cout<<"La suma es: "<<numero1+numero2<<endl;
+}
+void r(int numero1,int numero2){
+    cout<<"La resta es: "<<numero1-numero2<<endl;
+}
+void m(int numero1,int numero2){
+    cout<<"La multiplicacion es: "<<numero1*numero2<<endl;
 }

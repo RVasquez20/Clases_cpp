@@ -30,7 +30,8 @@ Estudiante EstudianteDatos[100][100];*/
 void Menu();
 void Mostrar();
 int main() {
-   if(usuario=="jairo"){
+    string us="jairo";
+   if(us.compare(usuario)){
        cout<<"Hola "<<usuario<<endl;
        linea;
    }
