@@ -6,17 +6,19 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/rodri/Documents/GitHub/Clases_cpp/Clase 12/main.cpp
+C:/Users/rodri/Documents/GitHub/Clases_cpp/Clase 13/main.cpp
+iostream
+-
 stdio.h
 -
 stdlib.h
+-
+string
 -
 string.h
 -
 conio.h
 -
-windows.h
--
-iostream
+fstream
 -
 
