@@ -1,0 +1,4 @@
+1,2,3,4,5
+Esto es un Archivo de prueba
+Lectura de archivos en c++;
+Hola Mundo
