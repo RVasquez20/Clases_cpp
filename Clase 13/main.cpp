@@ -7,7 +7,7 @@
 #include <fstream>
 using namespace std;
 //Archivos/Ficheros
-//Siguiente clase-> FILE 
+//Siguiente clase-> FILE
 
 int main() {
 /*char ch;
@@ -51,7 +51,7 @@ ifstream Archivo;
  * in->Leer//Lee el contenido del archivo solamente
  * app->Añadir//Si el archivo exite y tiene contenido, solamente agrega el contenido nuevo al final del archivo, si no existe el archivo lo crea
  * */
-Archivo.open("C:\\Users\\rodri\\Documents\\GitHub\\Clases_cpp\\Clase 13\\Archivo1.txt",ios::in);
+Archivo.open("C:\\Users\\rodri\\Documents\\GitHub\\Clases_cpp\\Clase 13\\Brochure Servicios Matemorfosis 2021.pdf",ios::in);
 string Contenido;
 //eof= End Of File
 if(Archivo.fail()){
