@@ -1,0 +1,16 @@
+Nombre completo: Juan
+Grado: 5to
+Nota 1: 60
+Nota 2: 60
+Promedio: 60
+El estudiante APROVO
+========================================
+Nombre completo: Pedro
+Grado: 6to
+Nota  1:60
+Nota  2:63
+Nota  3:65
+Nota  4:69
+Promedio: 64.25
+El estudiante APROVO
+========================================
