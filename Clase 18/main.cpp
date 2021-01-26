@@ -24,7 +24,7 @@ struct Facturas{
     char NITFactura[12];
     struct fecha FechaFactura;
     int idProductos,Cantidad;
-    double PrecioVenta,Total;
+    double Total;
 };
 Facturas Factura;
 void MenuPrincipal();
