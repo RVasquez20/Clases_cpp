@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/rodri/Documents/GitHub/Clases_cpp/Clase 18/main.cpp
+librerias.h
+C:/Users/rodri/Documents/GitHub/Clases_cpp/Clase 18/librerias.h
+
