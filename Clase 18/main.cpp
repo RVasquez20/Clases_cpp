@@ -12,7 +12,7 @@ struct Marcas{
 };
 Marcas Marca;
 struct Productos{
-    int CodigoProducto,idMarca;
+    int CodigoProducto,idMarca,Cantidad;
     char Nombre[100];
     double PrecioCosto,PrecioVenta;
     struct fecha FechaDeIngreso;
@@ -235,6 +235,9 @@ void IngresoProductos(){
     cout<<"Ingrese el id de la marca a la que pertenece el producto:";
     cin>>Producto.idMarca;
     fflush(stdin);
+    cout<<"Ingrese La Cantidad De existencias del producto:";
+    cin>>Producto.Cantidad;
+    fflush(stdin);
     cout<<"Ingrese el Precio Costo del producto:";
     cin>>Producto.PrecioCosto;
     fflush(stdin);
@@ -254,20 +257,20 @@ void IngresoProductos(){
     if(!((Producto.FechaDeIngreso.d>0 && Producto.FechaDeIngreso.d<32) && (Producto.FechaDeIngreso.m>0 && Producto.FechaDeIngreso.m<13) && (Producto.FechaDeIngreso.a>1990 && Producto.FechaDeIngreso.a<2100))){
         goto loopFecha;
     }
-    ArchivoP<<Producto.CodigoProducto<<" "<<Producto.Nombre<<" "<<Producto.idMarca<<" "<<Producto.PrecioCosto<<" "<<Producto.PrecioVenta<<" "<<Producto.FechaDeIngreso.d
+    ArchivoP<<Producto.CodigoProducto<<" "<<Producto.Nombre<<" "<<Producto.idMarca<<" "<<" "<<Producto.Cantidad<<Producto.PrecioCosto<<" "<<Producto.PrecioVenta<<" "<<Producto.FechaDeIngreso.d
             <<" "<<Producto.FechaDeIngreso.m<<" "<<Producto.FechaDeIngreso.a<<endl;
     ArchivoP.close();
 }
 bool VerificadorP(int cod){
     fstream Archivo(Product,ios::in);
     int Encontrado=0;
-    Archivo>>Producto.CodigoProducto>>Producto.Nombre>>Producto.idMarca>>Producto.PrecioCosto>>Producto.PrecioVenta>>Producto.FechaDeIngreso.d
+    Archivo>>Producto.CodigoProducto>>Producto.Nombre>>Producto.idMarca>>Producto.Cantidad>>Producto.PrecioCosto>>Producto.PrecioVenta>>Producto.FechaDeIngreso.d
             >>Producto.FechaDeIngreso.m>>Producto.FechaDeIngreso.a;
     while(!Archivo.eof()){
         if(Producto.CodigoProducto==cod) {
             Encontrado = 1;
         }
-        Archivo>>Producto.CodigoProducto>>Producto.Nombre>>Producto.idMarca>>Producto.PrecioCosto>>Producto.PrecioVenta>>Producto.FechaDeIngreso.d
+        Archivo>>Producto.CodigoProducto>>Producto.Nombre>>Producto.idMarca>>Producto.Cantidad>>Producto.PrecioCosto>>Producto.PrecioVenta>>Producto.FechaDeIngreso.d
                >>Producto.FechaDeIngreso.m>>Producto.FechaDeIngreso.a;
     }
     Archivo.close();
