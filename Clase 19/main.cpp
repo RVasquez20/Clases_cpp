@@ -3,7 +3,7 @@
 #define Contrasenia "C++"
 
 string Marc="Marcas.dat";
-string Product="Productos.txt";
+string Product="Productos.dat";
 string Vent="Ventas.txt";
 string Temp="Temporal.dat";
 
@@ -427,7 +427,7 @@ void MenuProductos(){
 }
 void IngresoProductos(){
 
-    fstream ArchivoP(Product,ios::app);
+    fstream ArchivoP(Product,ios::app|ios::binary);
     loopCodigoProducto:
     int codaux=0;
     fflush(stdin);
@@ -471,17 +471,18 @@ void IngresoProductos(){
     if(!((Producto.FechaDeIngreso.d>0 && Producto.FechaDeIngreso.d<32) && (Producto.FechaDeIngreso.m>0 && Producto.FechaDeIngreso.m<13) && (Producto.FechaDeIngreso.a>1990 && Producto.FechaDeIngreso.a<2100))){
         goto loopFecha;
     }
-    ArchivoP<<Producto.CodigoProducto<<" "<<Producto.Nombre<<" "<<Producto.idMarca<<" "<<Producto.Cantidad<<" "<<Producto.PrecioCosto<<" "<<Producto.PrecioVenta<<" "<<Producto.FechaDeIngreso.d<<" "<<Producto.FechaDeIngreso.m<<" "<<Producto.FechaDeIngreso.a<<endl;
+    ArchivoP.write((char *)&Producto,sizeof (Productos));
     ArchivoP.close();
 }
 void LecturaProductos(){
 
-    fstream ArchivoP(Product,ios::in);
+    fstream ArchivoP(Product,ios::in|ios::binary);
 
     if(ArchivoP.fail()){
         cout << "Error..." << endl;
-    }else{
-        ArchivoP>>Producto.CodigoProducto>>Producto.Nombre>>Producto.idMarca>>Producto.Cantidad>>Producto.PrecioCosto>>Producto.PrecioVenta>>Producto.FechaDeIngreso.d>>Producto.FechaDeIngreso.m>>Producto.FechaDeIngreso.a;
+    }else {
+
+    ArchivoP.read((char *)&Producto,sizeof (Productos));
         while(!ArchivoP.eof()){
             cout << "Codigo del producto: " <<  Producto.CodigoProducto << endl;
             cout << "ID de la marca a la que pertenece el producto: " << Producto.idMarca << endl;
@@ -493,7 +494,7 @@ void LecturaProductos(){
             cout << "Mes que ingreso el producto: " << Producto.FechaDeIngreso.m << endl;
             cout << "Anio que ingreso el producto: " <<  Producto.FechaDeIngreso.a << endl;
             cout << "--------------------------------------" << endl;
-            ArchivoP>>Producto.CodigoProducto>>Producto.Nombre>>Producto.idMarca>>Producto.Cantidad>>Producto.PrecioCosto>>Producto.PrecioVenta>>Producto.FechaDeIngreso.d>>Producto.FechaDeIngreso.m>>Producto.FechaDeIngreso.a;
+            ArchivoP.read((char *)&Producto,sizeof (Productos));
         }
     }
     ArchivoP.close();
