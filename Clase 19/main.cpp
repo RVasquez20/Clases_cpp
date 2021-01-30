@@ -1,6 +1,8 @@
 #include "librerias.h"
 #define Usuario "Jairo"
 #define Contrasenia "C++"
+#define UsuarioAdmin "admin"
+#define ContraAdmin "admin"
 
 string Marc="Marcas.dat";
 string Product="Productos.dat";
@@ -33,6 +35,7 @@ struct Facturas{
 Facturas Factura;
 
 void Login();
+void LoginAdministradores();
 
 void MenuPrincipal();
 
@@ -53,6 +56,8 @@ void EliminarProductos();
 void AgregarExistencias();
 bool VerificadorP(int);
 bool VerificadorDeNumeros(string);
+void ImportacionDeInventariotxt();
+void ImportacionDeInventarioCSV();
 
 void MenuVentas();
 void IngresoVenta();
@@ -60,7 +65,7 @@ void LecturaVenta();
 int ContadorV();
 
 int main() {
-    Login();
+    MenuPrincipal();
     return 0;
 }
 
@@ -87,6 +92,32 @@ void Login(){
         Login();
     }else{
         MenuPrincipal();
+    }
+}
+void LoginAdministradores(){
+    string Us, Contr;
+
+    cout << "Usuario: ";
+    getline(cin,Us);
+    fflush(stdin);
+    cout << "Contrasenia: ";
+    getline(cin,Contr);
+    fflush(stdin);
+
+    if((Us != UsuarioAdmin) && (Contr != ContraAdmin)){
+        cout << "Usuario y contrasenia incorrectas, intente de nuevo..." << endl;
+        LoginAdministradores();
+    }else
+    if(Us != UsuarioAdmin){
+        cout << "Usuario incorrecto, intente de nuevo..." << endl;
+        LoginAdministradores();
+    }else
+    if(Contr != ContraAdmin){
+        cout << "Contrasenia incorrecta, intente de nuevo..." << endl;
+        LoginAdministradores();
+    }else{
+    cout<<"Bienvenido"<<endl;
+    Sleep(2000);
     }
 }
 
@@ -372,6 +403,8 @@ void MenuProductos(){
     cout<<"5)Eliminar Productos"<<endl;
     cout<<"6)Agregar Existencia Productos"<<endl;
     cout<<"7)MenuPrincipal"<<endl;
+    cout<<"8)Ingreso de inventario (.txt)"<<endl;
+    cout<<"9)Ingreso de inventario (.csv)"<<endl;
     cout<<"----------------------"<<endl;
     cout<<"Ingrese la opcion que desea: ";
     cin>>opc;
@@ -417,6 +450,16 @@ void MenuProductos(){
             MenuPrincipal();
             break;
         }
+        case 8:{
+            ImportacionDeInventariotxt();
+            MenuPrincipal();
+            break;
+        }
+        case 9:{
+            ImportacionDeInventarioCSV();
+            MenuPrincipal();
+            break;
+        }
         default:{
             cout<<"opcion incorrecta elija nuevamente "<<endl;
             getch();
@@ -434,7 +477,7 @@ void IngresoProductos(){
     cout<<"Ingrese El Codigo Del Producto: ";
     cin>>codaux;
     fflush(stdin);
-    if(!VerificadorP(codaux)){
+    if(VerificadorP(codaux)){
         cout<<"Codigo YA EXISTENTE "<<endl;
         goto loopCodigoProducto;
     }else{
@@ -481,13 +524,25 @@ void LecturaProductos(){
     if(ArchivoP.fail()){
         cout << "Error..." << endl;
     }else {
-
     ArchivoP.read((char *)&Producto,sizeof (Productos));
         while(!ArchivoP.eof()){
             cout << "Codigo del producto: " <<  Producto.CodigoProducto << endl;
-            cout << "ID de la marca a la que pertenece el producto: " << Producto.idMarca << endl;
             cout << "Cantidad De existencias del producto: " << Producto.Cantidad << endl;
             cout << "Nombre del producto: " <<  Producto.Nombre << endl;
+
+            fstream ArchivoM(Marc,ios::in|ios::binary);
+            if(ArchivoM.fail()){
+                cout<<"Error"<<endl;
+            }else{
+                ArchivoM.read((char *)&Marca,sizeof (Marcas));
+                while(!ArchivoM.eof()){
+                    if(Producto.idMarca==Marca.idMarca){
+                        cout << "La marca a la que pertenece el producto: " << Marca.NombreMarca << endl;
+                    }
+                    ArchivoM.read((char *)&Marca,sizeof (Marcas));
+                }
+            }
+            ArchivoM.close();
             cout << "Precio Costo del producto: " <<  Producto.PrecioCosto << endl;
             cout << "Precio Venta del producto: " <<  Producto.PrecioVenta << endl;
             cout << "Dia que ingreso el producto: " <<  Producto.FechaDeIngreso.d << endl;
@@ -704,23 +759,138 @@ void AgregarExistencias(){
     rename(Temp.c_str(),Product.c_str());
 }
 bool VerificadorP(int cod){
-    fstream Archivo(Product,ios::in);
+    fstream Archivo(Product,ios::in|ios::binary);
     int Encontrado=0;
-    Archivo>>Producto.CodigoProducto>>Producto.Nombre>>Producto.idMarca>>Producto.Cantidad>>Producto.PrecioCosto>>Producto.PrecioVenta>>Producto.FechaDeIngreso.d
-           >>Producto.FechaDeIngreso.m>>Producto.FechaDeIngreso.a;
+    Archivo.read((char *)&Producto,sizeof (Productos));
     while(!Archivo.eof()){
         if(Producto.CodigoProducto==cod) {
             Encontrado = 1;
         }
-        Archivo>>Producto.CodigoProducto>>Producto.Nombre>>Producto.idMarca>>Producto.Cantidad>>Producto.PrecioCosto>>Producto.PrecioVenta>>Producto.FechaDeIngreso.d
-               >>Producto.FechaDeIngreso.m>>Producto.FechaDeIngreso.a;
+        Archivo.read((char *)&Producto,sizeof (Productos));
     }
     Archivo.close();
     if(Encontrado==0){
-        return true;
-    }else{
         return false;
+    }else{
+        return true;
     }
+}
+void ImportacionDeInventariotxt(){
+LoginAdministradores();
+    string CodigoProducto,idMarca,Cantidad,Nombre,PrecioCosto,PrecioVenta,dia,mes,anio;
+
+cout<<" INGRESO DE INVENTARIO EN TXT"<<endl<<endl;
+string NombreArchivoInventario;
+cout<<"Ingrese el nombre del archivo donde se encuentra su inventario"<<endl<<"NO OLVIDE COLOCAR EL .TXT"<<endl;
+getline(cin,NombreArchivoInventario);
+fflush(stdin);
+fstream Importado(NombreArchivoInventario,ios::in);
+fstream Inventario(Product,ios::out|ios::binary);
+string contenido;
+getline(Importado,contenido);
+cout<<contenido<<endl;
+cout<<"--------------------------------"<<endl;
+while(getline(Importado,contenido)){
+    stringstream ss(contenido);
+    getline(ss,CodigoProducto,',');
+    Producto.CodigoProducto=atoi(CodigoProducto.c_str());
+    fflush(stdin);
+    getline(ss,idMarca,',');
+    Producto.idMarca=atoi(idMarca.c_str());
+    fflush(stdin);
+    getline(ss,Cantidad,',');
+    Producto.Cantidad=atoi(Cantidad.c_str());
+    fflush(stdin);
+    getline(ss,Nombre,',');
+    strcpy(Producto.Nombre,Nombre.c_str());
+    fflush(stdin);
+    getline(ss,PrecioCosto,',');
+    Producto.PrecioCosto=atof(PrecioCosto.c_str());
+    fflush(stdin);
+    getline(ss,PrecioVenta,',');
+    Producto.PrecioVenta=atof(PrecioVenta.c_str());
+    fflush(stdin);
+    getline(ss,dia,'/');
+    Producto.FechaDeIngreso.d=atoi(dia.c_str());
+    fflush(stdin);
+    getline(ss,mes,'/');
+    Producto.FechaDeIngreso.m=atoi(mes.c_str());
+    fflush(stdin);
+    getline(ss,anio,'\0');
+    Producto.FechaDeIngreso.a=atoi(anio.c_str());
+    fflush(stdin);
+    cout<<"Codigo :"<<Producto.CodigoProducto<<endl;
+    cout<<"Nombre :"<<Producto.Nombre<<endl;
+    cout<<"Cantidad :"<<Producto.Cantidad<<endl;
+    cout<<"IdMarca :"<<Producto.idMarca<<endl;
+    cout<<"Precio Venta :Q."<<Producto.PrecioVenta<<endl;
+    cout<<"Precio Costo :Q."<<Producto.PrecioCosto<<endl;
+    cout<<"Fecha De Ingreso :"<<Producto.FechaDeIngreso.d<<"/"<<Producto.FechaDeIngreso.m<<"/"<<Producto.FechaDeIngreso.a<<endl;
+    cout<<"-------------------------------"<<endl;
+    Inventario.write((char *)&Producto,sizeof(Productos));
+}
+Importado.close();
+Inventario.close();
+}
+void ImportacionDeInventarioCSV(){
+    //LoginAdministradores();
+    string CodigoProducto,idMarca,Cantidad,Nombre,PrecioCosto,PrecioVenta,dia,mes,anio;
+
+    cout<<" INGRESO DE INVENTARIO EN CSV"<<endl<<endl;
+    string NombreArchivoInventario,csv=".csv";
+    cout<<"Ingrese el nombre del archivo donde se encuentra su inventario"<<endl;
+    getline(cin,NombreArchivoInventario);
+    fflush(stdin);
+    //inventario.csv
+    NombreArchivoInventario.append(csv);
+
+    fstream Importado(NombreArchivoInventario,ios::in);
+    fstream Inventario(Product,ios::out|ios::binary);
+    string contenido;
+/*    getline(Importado,contenido);
+    cout<<contenido<<endl;
+    cout<<"--------------------------------"<<endl;*/
+    while(getline(Importado,contenido)){
+        stringstream ss(contenido);
+        getline(ss,CodigoProducto,';');
+        Producto.CodigoProducto=atoi(CodigoProducto.c_str());
+        fflush(stdin);
+        getline(ss,Nombre,';');
+        strcpy(Producto.Nombre,Nombre.c_str());
+        fflush(stdin);
+        getline(ss,idMarca,';');
+        Producto.idMarca=atoi(idMarca.c_str());
+        fflush(stdin);
+        getline(ss,Cantidad,';');
+        Producto.Cantidad=atoi(Cantidad.c_str());
+        fflush(stdin);
+        getline(ss,PrecioCosto,';');
+        Producto.PrecioCosto=atof(PrecioCosto.c_str());
+        fflush(stdin);
+        getline(ss,PrecioVenta,';');
+        Producto.PrecioVenta=atof(PrecioVenta.c_str());
+        fflush(stdin);
+        getline(ss,dia,'/');
+        Producto.FechaDeIngreso.d=atoi(dia.c_str());
+        fflush(stdin);
+        getline(ss,mes,'/');
+        Producto.FechaDeIngreso.m=atoi(mes.c_str());
+        fflush(stdin);
+        getline(ss,anio,'\n');
+        Producto.FechaDeIngreso.a=atoi(anio.c_str());
+        fflush(stdin);
+        cout<<"Codigo :"<<Producto.CodigoProducto<<endl;
+        cout<<"Nombre :"<<Producto.Nombre<<endl;
+        cout<<"Cantidad :"<<Producto.Cantidad<<endl;
+        cout<<"IdMarca :"<<Producto.idMarca<<endl;
+        cout<<"Precio Venta :Q."<<Producto.PrecioVenta<<endl;
+        cout<<"Precio Costo :Q."<<Producto.PrecioCosto<<endl;
+        cout<<"Fecha De Ingreso :"<<Producto.FechaDeIngreso.d<<"/"<<Producto.FechaDeIngreso.m<<"/"<<Producto.FechaDeIngreso.a<<endl;
+        cout<<"-------------------------------"<<endl;
+        Inventario.write((char *)&Producto,sizeof(Productos));
+        }
+    Importado.close();
+    Inventario.close();
 }
 
 void MenuVentas(){
