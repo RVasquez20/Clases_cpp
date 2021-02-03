@@ -826,7 +826,7 @@ while(getline(Importado,contenido)){
     cout<<"Precio Venta :Q."<<Producto.PrecioVenta<<endl;
     cout<<"Precio Costo :Q."<<Producto.PrecioCosto<<endl;
     cout<<"Fecha De Ingreso :"<<Producto.FechaDeIngreso.d<<"/"<<Producto.FechaDeIngreso.m<<"/"<<Producto.FechaDeIngreso.a<<endl;
-    cout<<"-------------------------------"<<endl;
+    cout<<"--------------------------------"<<endl;
     Inventario.write((char *)&Producto,sizeof(Productos));
 }
 Importado.close();
