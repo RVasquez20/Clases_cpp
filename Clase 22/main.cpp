@@ -1,5 +1,5 @@
 #include <librerias.h>
-struct Fechas{
+/*struct Fechas{
     int d,m,a;
 };
 struct Padron{
@@ -7,11 +7,11 @@ struct Padron{
     char Sexo[5],Nombre[50],Apellido[50],DPI[13];
     struct Fechas Fecha;
 };
-Padron P;
+Padron P;*/
 string NombreArchivo="PADRON.txt";
 string Interno="Padron.dat";
 int main() {
-    loop:
+    /*loop:
     int opc=0;
 cout<<"Menu Principal"<<endl;
     cout<<"1)Importar desde el archivo txt"<<endl;
@@ -83,6 +83,37 @@ cout<<"Menu Principal"<<endl;
             goto loop;
             break;
         }
-    }
+    }*/
+    SetConsoleTitle("Prueba de ficheros ");
+    //FICHEROS
+    //Archivo<<"hola"<<endl;--> fprintf(Archivo,"Hola");
+    //Archivo>>I;--->fscanf(Archivo,"%d",&i);
+    int i=0;
+    printf("Hola mundo\n");
+    scanf("%d",&i);
+    printf("el numero ingresado es %d",&i);
+    //fstream||ifstream||ofstream-->> FILE *Archivo=fopen("NombreDelArchivo","Metodo de apertura");
+    //Metodos de apertura de ficheros
+    /*
+     * r=lectura(read)
+     * w=Escritura(write), si el archivo existe lo sobreescribe sino lo crea y escribe
+     * a=agregar(append),si el archivo existe agrega,sino lo crea y agrega
+     * r+=lectura y escritura,siempre y cuando el archivo exista de lo contrario
+     * dara error,al escribir se borra el contenido y se coloca el nuevo
+     * w+=lectura y escritura,si el archivo no exite lo crea y si existe lo sobreescribe
+     * a+=agregar,Leer,Escribir,si el archivo no existe , lo crea y agrega al final, si el archivo
+     * existe solamente agrega al final
+     * rb=lectura binaria
+     * wb=escritura binaria
+     * ab=agregar en binario
+     * r+b=lectura y escritura en binarios
+     * w+b=lectura y escritura en binario
+     * a+b=agregar,leer,escribir en binario*/
+    //Archivo.close();--> fclose(Archivo);
+    //Archivo.fail()--> Archivo==NULL
+    //SetConsoleTitle("Titulo de la consola");
+    //Archivo.write((char *)&P,sizeof(Padron));-->fwrite(&P,sizeof(Padron),1,Archivo);
+    //Archivo.read((char *)&P,sizeof(Padron));--> fread(&P,sizeof(Padron),1,Archivo);
+    //fseek,ftell,rewind...
     return 0;
 }
