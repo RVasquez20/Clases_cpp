@@ -1,0 +1,338 @@
+1,2,Santa Catarina Pinula
+1,4,San José Del Golfo
+1,5,Palencia
+1,3,San José Pinula
+1,6,Chinautla
+1,8,Mixco
+1,10,San Juan Sacatepéquez
+1,12,Chuarrancho
+1,11,San Raymundo
+1,17,San Miguel Petapa
+1,16,Villa Canales
+1,15,Villa Nueva
+1,14,Amatitlán
+1,13,Fraijanes
+1,9,San Pedro Sacatepéquez
+1,7,San Pedro Ayampuc
+2,1,Guastatoya
+2,8,San Antonio La Paz
+2,7,Sanarate
+2,6,Sansare
+2,5,El Jícaro
+2,2,Morazán
+2,4,San Cristóbal Acasaguastlán
+2,3,San Agustín Acasaguastlán
+3,1,Antigua Guatemala
+3,16,Santa Catarina Barahona
+3,15,San Antonio Aguas Calientes
+3,14,San Juan Alotenango
+3,13,San Miguel Dueñas
+3,12,Ciudad Vieja
+3,11,Santa María De Jesús
+3,10,Magdalena Milpas Altas
+3,9,Santa Lucía Milpas Altas
+3,8,San Lucas Sacatepéquez
+3,7,San Bartolomé Milpas Altas
+3,6,Santiago Sacatepéquez
+3,5,Santo Domingo Xenacoj
+3,2,Jocotenango
+3,4,Sumpango
+3,3,Pastores
+4,13,San Andrés Itzapa
+4,2,San Jose Poaquil
+4,4,San Juan Comalapa
+4,6,Tecpán Guatemala
+1,1,Guatemala
+4,8,Pochuta
+4,7,Patzún
+4,12,San Pedro Yepocapa
+4,11,Acatenango
+4,10,Santa Cruz Balanyá
+4,9,Patzicía
+4,5,Santa Apolonia
+4,3,San Martín Jilotepeque
+4,1,Chimaltenango
+4,14,Parramos
+4,15,Zaragoza
+4,16,El Tejar
+5,3,La Democracia
+5,4,Siquinalá
+5,6,Tiquisate
+5,5,Masagua
+5,9,Puerto San José
+5,11,Palín
+5,13,Nueva Concepción
+5,12,San Vicente Pacaya
+5,10,Iztapa
+5,2,Santa Lucía Cotzumalguapa
+5,1,Escuintla
+5,8,Guanagazapa
+5,7,La Gomera
+6,1,Cuilapa
+6,4,Casillas
+6,6,Oratorio
+6,8,Chiquimulilla
+6,10,Santa María Ixhuatán
+6,12,Santa Cruz Naranjo
+6,11,Guazacapán
+6,14,Nueva Santa Rosa
+6,13,Pueblo Nuevo Viñas
+6,9,Taxisco
+6,7,San Juan Tecuaco
+6,5,San Rafael Las Flores
+6,3,Santa Rosa De Lima
+6,2,Barberena
+7,1,Sololá
+7,19,Santiago Atitlán
+7,18,San Pedro La Laguna
+7,17,San Juan La Laguna
+7,16,San Marcos La Laguna
+7,15,San Pablo La Laguna
+7,14,Santa Cruz La Laguna
+7,13,San Lucas Tolimán
+7,12,San Antonio Palopó
+7,11,Santa Catarina Palopo
+7,10,Panajachel
+7,9,San Andrés Semetabaj
+7,8,Concepción
+7,3,Santa Maria Visitación
+7,4,Santa Lucía Utatlán
+7,5,Nahualá
+7,7,Santa Clara La Laguna
+7,6,Santa Catarina Ixtahuacán
+7,2,San José Chacayá
+8,1,Totonicapán
+8,8,San Bartolo
+8,7,Santa Lucía La Reforma
+8,2,San Cristóbal Totonicapán
+8,4,San Andrés Xecul
+8,5,Momostenango
+8,6,Santa María Chiquimula
+8,3,San Francisco El Alto
+9,9,San Juan Ostuncalco
+9,10,San Mateo
+9,8,San Miguel Sigüilá
+9,7,Cajolá
+9,6,Cabricán
+9,5,Sibilia
+9,4,San Carlos Sija
+9,3,Olintepeque
+9,2,Salcajá
+9,1,Quetzaltenango
+9,12,San Martín Sacatepéquez
+9,11,Concepción Chiquirichapa
+9,13,Almolonga
+9,15,Huitán
+9,17,Colomba
+9,18,San Francisco La Unión
+9,20,Coatepeque
+9,19,El Palmar
+9,24,Palestina De Los Altos
+9,23,La Esperanza
+9,22,Flores Costa Cuca
+9,21,Génova
+9,16,Zunil
+9,14,Cantel
+10,12,San Gabriel
+10,5,San José El Ídolo
+10,4,San Bernardino
+10,18,Zunilito
+10,17,Santo Tomas La Unión
+10,16,San Juan Bautista
+10,15,Santa Bárbara
+10,10,San Antonio Suchitepequez
+10,9,San Pablo Jocopilas
+10,8,Samayac
+10,7,San Lorenzo
+10,11,San Miguel Panán
+10,20,Río Bravo
+10,19,Pueblo Nuevo
+10,6,Santo Domingo Suchitepéquez
+10,14,Patulul
+10,1,Mazatenango
+10,2,Cuyotenango
+10,3,San Francisco Zapotitlán
+10,13,Chicacao
+11,1,Retalhuleu
+11,3,Santa Cruz Muluá
+11,4,San Martín Zapotitlán
+11,6,San Andrés Villa Seca
+11,8,Nuevo San Carlos
+11,9,El Asintal
+11,7,Champerico
+11,5,San Felipe Retalhuleu
+11,2,San Sebastián
+12,14,San José El Rodeo
+12,15,Malacatán
+12,11,San Rafael Pie De La Cuesta
+12,16,Catarina
+12,13,El Tumbador
+12,19,San Pablo
+12,21,La Reforma
+12,23,Ixchiguán
+12,25,San Cristóbal Cucho
+12,27,Esquipulas Palo Gordo
+12,26,Sipacapa
+12,29,San Lorenzo
+12,1,San Marcos
+12,12,Nuevo Progreso
+12,10,Tejutla
+12,9,Tajumulco
+12,8,Sibinal
+12,7,Tacaná
+12,6,Concepción Tutuapa
+12,5,San Miguel Ixtahuacán
+12,4,Comitancillo
+12,3,San Antonio Sacatepéquez
+12,2,San Pedro Sacatepéquez
+12,28,Río Blanco
+12,24,San José Ojetenam
+12,22,Pajapita
+12,20,El Quetzal
+12,18,Ocos
+12,17,Ayutla
+13,2,Chiantla
+13,3,Malacatancito
+13,20,San Sebastian Huehuetenango
+13,19,Colotenango
+13,18,San Mateo Ixtatán
+13,17,Santa Eulalia
+13,16,San Juan Atitán
+13,15,Todos Santos Cuchumatán
+13,14,San Rafael La Independencia
+13,13,San Miguel Acatán
+13,32,Unión Cantinil
+13,31,Santa Ana Huista
+13,30,Santiago Chimaltenango
+13,29,San Gaspar Ixchil
+13,28,San Rafael Petzal
+13,27,Aguacatán
+13,26,Santa Cruz Barillas
+13,25,San Sebastián Coatán
+13,24,San Antonio Huista
+13,23,San Juan Ixcoy
+13,22,Concepción Huista
+13,21,Tectitán
+13,1,Huehuetenango
+13,12,La Democracia
+13,11,La Libertad
+13,10,Santa Bárbara
+13,9,San Ildefonso Ixtahuacán
+13,8,San Pedro Soloma
+13,7,Jacaltenango
+13,6,San Pedro Necta
+13,5,Nentón
+13,4,Cuilco
+14,11,San Juan Cotzal
+14,12,Joyabaj
+14,13,Nebaj
+14,2,Chiché
+14,3,Chinique
+14,5,Chajul
+14,7,Patzite
+14,6,Chichicastenango
+14,21,Pachalum
+14,10,Cunén
+14,9,San Pedro Jocopilas
+14,8,San Antonio Ilotenango
+14,4,Zacualpa
+14,1,Santa Cruz Del Quiché
+14,14,San Andrés Sajcabajá
+14,15,Uspantán
+14,20,Ixcán
+14,19,Chicamán
+14,18,Canilla
+14,17,San Bartolomé Jocotenango
+14,16,Sacapulas
+15,4,Cubulco
+15,1,Salamá
+15,3,Rabinal
+15,2,San Miguel Chicaj
+15,8,Purulhá
+15,7,San Jerónimo
+15,5,Granados
+16,1,Cobán
+16,2,Santa Cruz Verapaz
+16,3,San Cristóbal Verapaz
+16,5,Tamahú
+16,4,Tactic
+16,15,Fray Bartolomé De Las Casas
+16,14,Chahal
+16,13,Chisec
+16,12,Santa María Cahabón
+16,11,Lanquín
+16,10,San Juan Chamelco
+16,9,San Pedro Carchá
+16,8,Senahú
+16,7,Panzós
+16,16,Santa Catalina La Tinta
+16,6,San Miguel Tucuru
+17,1,Flores
+17,4,San Andrés
+17,5,La Libertad
+17,3,San Benito
+17,2,San José
+17,6,San Francisco
+17,8,Dolores
+17,7,Santa Ana
+17,12,Poptún
+17,11,Melchor De Mencos
+17,10,Sayaxche
+17,9,San Luis
+18,1,Puerto Barrios
+18,2,Livingston
+18,3,El Estor
+18,5,Los Amates
+18,4,Morales
+19,1,Zacapa
+19,2,Estanzuela
+19,5,Teculután
+19,6,Usumatlán
+19,4,Gualán
+19,3,Río Hondo
+19,7,Cabañas
+19,9,La Unión
+19,8,San Diego
+19,10,Huité
+20,4,Jocotán
+20,5,Camotán
+20,6,Olopa
+20,7,Esquipulas
+20,9,Quezaltepeque
+20,11,Ipala
+20,10,San Jacinto
+20,3,San Juan Ermita
+20,2,San José La Arada
+20,1,Chiquimula
+20,8,Concepción Las Minas
+21,3,San Luis Jilotepeque
+21,4,San Manuel Chaparrón
+21,1,Jalapa
+21,2,San Pedro Pinula
+21,5,San Carlos Alzatate
+21,6,Monjas
+21,7,Mataquescuintla
+22,1,Jutiapa
+22,2,El Progreso
+22,3,Santa Catarina Mita
+22,4,Agua Blanca
+22,5,Asunción Mita
+22,6,Yupiltepeque
+22,7,Atescatempa
+22,8,Jerez
+22,9,El Adelanto
+22,10,Zapotitlán
+22,11,Comapa
+22,12,Jalpatagua
+22,13,Conguaco
+22,14,Moyuta
+22,15,Pasaco
+22,16,San José Acatempa
+22,17,Quesada
+15,6,Santa Cruz El Chol
+16,17,Raxruhá
+9,27,Genova Costa Cuca
+9,29,Monrovia 
+9,28,Colomba Costa Cuca 
+9,30,Ostuncalco 
+9,31,San Juan Olintepeque

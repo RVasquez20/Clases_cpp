@@ -1,0 +1,6 @@
+1,VAMOS,Alejandro Giammattei,Guillermo Castillo
+2,UNION DE LA ESPERANZA,Sandra Torres,Carlos RaÃºl Morales
+3,PARTIDO HUMANISTA DE GUATEMALA,Edmond Mulet,Jorge PÃ©rez
+4,VALOR,Zury Rios,Roberto Molina Barreto
+
+
