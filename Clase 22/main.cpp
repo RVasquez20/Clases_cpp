@@ -8,6 +8,11 @@ struct Padron{
     struct Fechas Fecha;
 };
 Padron P;*/
+struct Depas{
+    int id;
+    char Nombre[100];
+};
+Depas d;
 string NombreArchivo="PADRON.txt";
 string Interno="Padron.dat";
 int main() {
@@ -88,10 +93,10 @@ cout<<"Menu Principal"<<endl;
     //FICHEROS
     //Archivo<<"hola"<<endl;--> fprintf(Archivo,"Hola");
     //Archivo>>I;--->fscanf(Archivo,"%d",&i);
-    int i=0;
+    /*int i=0;
     printf("Hola mundo\n");
     scanf("%d",&i);
-    printf("el numero ingresado es %d",&i);
+    printf("el numero ingresado es %d",&i);*/
     //fstream||ifstream||ofstream-->> FILE *Archivo=fopen("NombreDelArchivo","Metodo de apertura");
     //Metodos de apertura de ficheros
     /*
@@ -115,5 +120,109 @@ cout<<"Menu Principal"<<endl;
     //Archivo.write((char *)&P,sizeof(Padron));-->fwrite(&P,sizeof(Padron),1,Archivo);
     //Archivo.read((char *)&P,sizeof(Padron));--> fread(&P,sizeof(Padron),1,Archivo);
     //fseek,ftell,rewind...
+    //Ejercico 1:Leer lineas de un fichero usando FILE
+   /*FILE *Archivo=fopen("DEPARTAMENTOS.txt","r");
+   char contenido[100];
+    if (Archivo==NULL){
+        perror("El archivo no se pudo abrir");
+    }else{
+    while(fgets(contenido,100,Archivo)!=NULL){
+        //cout<<contenido<<endl;
+        puts(contenido);
+    }
+    }
+   fclose(Archivo);
+*/
+   //Ejercicio 2:Escribir en un fichero x la frase que el usuario ingrese y mostrarlo en consola despues
+   //de haber leido
+   /*FILE *Archivo=fopen("prueba.txt","a+");
+  char x[100],y[100],z[100];
+  int diaaux=0;
+   cout<<"Ingrese la cadena a escribir en el archivo:"<<endl;
+   cin.getline(x,100,'\n');
+   fflush(stdin);
+   int dia=11;
+   fprintf(Archivo,"%s %d",x,dia);
+   rewind(Archivo);
+   fscanf(Archivo,"%s",y);
+    fscanf(Archivo,"%s",z);
+   fscanf(Archivo,"%d",&diaaux);
+    cout<<y<<z<<endl;
+    cout<<diaaux<<endl;
+   fclose(Archivo);
+*/
+   //Ejercicio 3: try catch de longitud de password
+   /* loop:
+   try {
+
+       string pass;
+       int Edad=0;
+       cout << "Ingrese su contraseña" << endl;
+       getline(cin, pass);
+       fflush(stdin);
+       cout<<"Ingrese su edad"<<endl;
+       cin>>Edad;
+       int l=0;
+       l=pass.length();
+       if( (pass.compare("/Hola")==0)){
+           cout<<"Contraseña Aceptada"<<endl;
+       }else{
+           throw 404;
+       }
+       if(l<5){
+           throw "No cumple los requisitos";
+       }
+       if(Edad<18){
+           throw Edad;
+       }
+
+   }catch (int x){
+       cout<<"Error: "<<x<<" Tu contraseña No contiene algun caracter especial"<<endl;
+       goto loop;
+   }catch(char const* s){
+    perror(s);
+   }
+*/
+   //Ejercicio 4:Leer el archivo Departamentos.txt con fread y usar try catch
+
+ try{
+     FILE *Depar=fopen("Depar.txt","a+");
+     if(Depar==NULL){
+         throw "Error al abrir Departamentos.txt";
+     }else {
+         cout << "Ingrese el id" << endl;
+         cin >> d.id;
+         fflush(stdin);
+         if(d.id<=0){
+             throw 400;
+         }
+         cout << "Ingrese el nombre del departamento" << endl;
+         cin.getline(d.Nombre, 100, '\n');
+         fflush(stdin);
+         fwrite(&d,sizeof(Depas),1,Depar);
+         fclose(Depar);
+         FILE *Depar=fopen("Depart.txt","r+");
+         if(Depar==NULL){
+             throw 500;
+
+         }else {
+             fread(&d,sizeof(Depas),1,Depar);
+             while(!feof(Depar)){
+              cout<<"ID:"<<d.id<<endl;
+              cout<<"Departamento: "<<d.Nombre<<endl;
+              cout<<"-------------------"<<endl;
+                 fread(&d,sizeof(Depas),1,Depar);
+             }
+             fclose(Depar);
+         }
+     }
+ } catch (char const* x) {
+cout<<x;
+ }catch(int y){
+     cout<<"Error: "<<y;
+ }
+
+
+
     return 0;
 }
