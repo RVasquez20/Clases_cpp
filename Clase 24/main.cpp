@@ -27,12 +27,9 @@ private:
     float Largo,Ancho;
 public:
     Rectangulo(float,float);
-
+    ~Rectangulo();
     void Perimetro();
     void Area();
-
-    virtual ~Rectangulo();
-
 };
 Rectangulo::Rectangulo(float Largo, float Ancho) {
     this->Ancho=Ancho;
@@ -49,10 +46,7 @@ void Rectangulo::Area() {
     cout<<"El Area es "<<area<<endl;
 }
 //Destructor, nos sirve para eliminar objetos
-
-
-Rectangulo::~Rectangulo() {
-
+Rectangulo::~Rectangulo(){
 }
 
 
