@@ -100,6 +100,12 @@ void MenuMarcas(){
             MenuMarcas();
             break;
         }
+        case 4:{
+            EliminarMarcas();
+            getch();
+            MenuMarcas();
+            break;
+        }
         case 5:{
             MenuPrincipal();
             break;
@@ -226,4 +232,37 @@ void ModificarMarcas(){
         perror("NO EXISTE UNA MARCA CON ESE ID");
     }
     fclose(ArchivoMarcas);
+}
+void EliminarMarcas(){
+    SetConsoleTitle("Eliminacion de Marca");
+    fflush(stdin);
+    FILE *ArchivoMarcas=fopen(M.c_str(),"rb");
+    FILE *Temporal=fopen("Temporal.dat","wb");
+    system("CLS");
+    MostrarMarcas();
+    int auxMar=0,existe=0;
+    cout<<"Ingrese el id de la marca que desea eliminar"<<endl;
+    cin>>auxMar;
+    fflush(stdin);
+    fread(&Marca,sizeof(Marcas),1,ArchivoMarcas);
+    while(!feof(ArchivoMarcas)){
+        if(auxMar==Marca.id) {
+            cout<<"ID->"<<Marca.id<<endl;
+            cout<<"NOMBRE->"<<Marca.NombreMarca<<endl;
+            cout<<"============================"<<endl;
+            existe=1;
+            cout<<"Eliminado Correctamente"<<endl;
+        }else{
+            fwrite(&Marca,sizeof(Marcas),1,Temporal);
+        }
+        fread(&Marca,sizeof(Marcas),1,ArchivoMarcas);
+    }
+    if(existe==0){
+        cout<<"Ese id no se encuentra en el Listado"<<endl;
+        getch();
+    }
+    fclose(ArchivoMarcas);
+    fclose(Temporal);
+    remove(M.c_str());
+    rename("Temporal.dat",M.c_str());
 }
