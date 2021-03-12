@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/rodri/Documents/GitHub/Clases_cpp/Clase 31/Calcu.h
+calculadora.h
+C:/Users/rodri/Documents/GitHub/Clases_cpp/Clase 31/calculadora.h
+
+C:/Users/rodri/Documents/GitHub/Clases_cpp/Clase 31/calculadora.h
+
+C:/Users/rodri/Documents/GitHub/Clases_cpp/Clase 31/main.cpp
+librerias.h
+-
+Calcu.h
+C:/Users/rodri/Documents/GitHub/Clases_cpp/Clase 31/Calcu.h
+
