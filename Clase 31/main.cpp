@@ -42,3 +42,14 @@ cout<<division(11,6)<<endl;
 int menu(int i) {
 return i;
 }
+/*ficheros
+ * POO
+ * pilas y colas
+ * recursividad
+ * archivos
+ * template
+ * lambda
+ * documetacion
+ * gotoxy
+ * login-->lunes
+ * */
